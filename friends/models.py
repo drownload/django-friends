@@ -80,8 +80,8 @@ class Friendship(models.Model):
     have both agreed to the association.
     """
 
-    to_user = models.ForeignKey(User, related_name="friends")
-    from_user = models.ForeignKey(User, related_name="_unused_")
+    to_user = models.ForeignKey(User, related_name="friendship_from")
+    from_user = models.ForeignKey(User, related_name="friendship_to")
     # @@@ relationship types
     added = models.DateField(default=datetime.date.today)
 
